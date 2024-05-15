@@ -91,7 +91,7 @@ TrainImage tia_construct_sample_form_file(char *img_file_path)
     img.data = img_data;
     return img;
 }
-void tia_fill_tia_from_file(TIA *tia, char *dir_path)
+void tia_fill_tia_from_dir(TIA *tia, char *dir_path)
 {
     DIR *fs = opendir(dir_path);
     struct dirent *t = readdir(fs);
