@@ -66,7 +66,7 @@ typedef struct {
 //     - tia      .... {TIA} pointer to the TIA structure
 //     - dir_path .... {char*} path to the image directory 
 // ============================================================
-void tia_fill_tia_from_file(TIA *tia, char *dir_path);
+void tia_fill_tia_from_dir(TIA *tia, char *dir_path);
 
 #ifdef TIA_IMPLEMENTATION
 TrainImage tia_construct_sample_form_file(char *img_file_path)
