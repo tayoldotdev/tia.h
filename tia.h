@@ -31,6 +31,10 @@
     } while (0)                                                                           
 #endif // da_append
 
+// ============================================================
+// This macro defines the modulo of images when filling TIA
+//     - example: 12 means every 12th image will be added
+// ============================================================
 #ifndef TIA_SKIP
 #define TIA_SKIP 12
 #endif // TIA_SKIP 
@@ -44,6 +48,11 @@ typedef struct {
     uint8_t *data;
 } TrainImage;
 
+// ============================================================
+// Construct a single structure of TrainImage from the image 
+// file at provided path
+//     - img_file_path .... {char*} path to the image 
+// ============================================================
 TrainImage tia_construct_sample_form_file(char *img_file_path);
 
 typedef struct {
@@ -52,10 +61,14 @@ typedef struct {
     TrainImage *items;
 } TIA;
 
+// ============================================================
+// Loads all images inside the diirectory into TIA structure
+//     - tia      .... {TIA} pointer to the TIA structure
+//     - dir_path .... {char*} path to the image directory 
+// ============================================================
 void tia_fill_tia_from_file(TIA *tia, char *dir_path);
 
 #ifdef TIA_IMPLEMENTATION
-
 TrainImage tia_construct_sample_form_file(char *img_file_path)
 {
     TrainImage img = {0};
@@ -117,4 +130,5 @@ void tia_fill_tia_from_file(TIA *tia, char *dir_path)
 #endif // TIA_IMPLEMENTATION
 
 #endif // TIA_H
+
 
