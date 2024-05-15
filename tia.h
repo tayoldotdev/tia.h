@@ -106,7 +106,7 @@ void tia_fill_tia_from_dir(TIA *tia, char *dir_path)
 #ifdef TIA_DEBUG
             prietf("moving into `%s`\n", buf);
 #endif // TIA_DEBUG
-            tia_fill_tia_from_file(tia, buf);
+            tia_fill_tia_from_dir(tia, buf);
         }
         t = readdir(fs);
     }
